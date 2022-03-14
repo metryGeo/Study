@@ -2,6 +2,9 @@
 
 [문제 링크](https://www.acmicpc.net/problem/4949) 
 
+### 메모
+sys.stdin.readline()은 공백을 입력할 수 없어 input()으로 입력
+
 ### 성능 요약
 
 메모리: 30860 KB, 시간: 104 ms
