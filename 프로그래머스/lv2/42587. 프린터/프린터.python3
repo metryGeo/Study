@@ -1,0 +1,16 @@
+from collections import deque
+def solution(p, l):
+    deq = deque(p)
+    cnt = 0
+    while 1:
+        l -= 1
+        if deq[0] == max(deq):
+            if l < 0:
+                cnt += 1
+                return cnt
+            deq.popleft()
+            cnt +=1
+        else:
+            if l < 0:
+                l = len(deq) - 1
+            deq.rotate(-1)
