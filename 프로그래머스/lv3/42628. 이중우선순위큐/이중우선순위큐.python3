@@ -1,0 +1,21 @@
+import heapq
+def solution(operations):
+    answer_MIN = []
+    answer_MAX = []
+    for i in operations:
+        a, b = i.split()
+        if a == "I":
+            heapq.heappush(answer_MIN, int(b))
+            heapq.heappush(answer_MAX, -int(b))
+        elif i == "D 1":
+            if answer_MAX:
+                p = heapq.heappop(answer_MAX)
+                answer_MIN.remove(-p)
+        elif i == "D -1":
+            if answer_MIN:
+                p = heapq.heappop(answer_MIN)
+                answer_MAX.remove(-p)
+    if answer_MAX:
+        return [-answer_MAX[0], answer_MIN[0]]
+    else:
+        return [0,0]
