@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+ 		http://www.springframework.org/schema/beans/spring-beans.xsd 
+ 		http://www.springframework.org/schema/context 
+ 		http://www.springframework.org/schema/context/spring-context.xsd">
+
+ 	<context:annotation-config />
+ 	
+ 	
+ 	<bean id="BookDao" class="com.brms.dao.BookDao" />
+ 	<bean id="BookRegisterService" class="com.brms.book.service.BookRegisterService" 
+ 	init-method="init_method" destroy-method="destroy_method"/>
+ 	<bean id="BookSearchService" class="com.brms.book.service.BookSearchService" />
+ 	
+ 	
+ 	<bean id="memberDao" class="com.brms.dao.MemberDao" />
+	<bean id="memberRegisterService" class="com.brms.member.service.MemberRegisterService" />
+	<bean id="memberSearchService" class="com.brms.member.service.MemberSearchService" />
+ 	
+ 		
+ </beans>
