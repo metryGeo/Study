@@ -79,6 +79,15 @@
 			</map>
 		</property>
 	</bean>
-
+	
+	
+	<!-- 싱글톤, 프로토타입 구분 -->
+	
+	<bean id="injectionBean" class="com.study.Injection" />
+	
+	<bean id="dependencyBean" class="com.study.Dependency" scope="prototype">
+		<constructor-arg ref="injectionBean" />
+		<property name="injection" ref="injectionBean" />
+	</bean>
 
 </beans>
