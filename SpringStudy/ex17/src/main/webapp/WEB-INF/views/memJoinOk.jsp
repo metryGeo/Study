@@ -6,10 +6,10 @@
 </head>
 <body>
 	<h1> memJoinOk </h1>
-	ID : ${memId}<br />
-	PW : ${memPw}<br />
-	Mail : ${memMail} <br />
-	Phone : ${memPhone1} <br />
+	ID : ${member.memId}<br />
+	PW : ${member.memPw}<br />
+	Mail : ${member.memMail} <br />
+	Phone : ${member.memPhone1} - ${member.memPhone2} - ${member.memPhone2} <br />
 	
 	<a href="/ex17/resources/html/memJoin.html"> Go MemberJoin </a><br />
 	<a href="/ex17/resources/html/login.html">Login</a>
