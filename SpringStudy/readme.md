@@ -14,3 +14,8 @@ GenericXmlApplicationContext ctx = new GenericXmlApplicationContext("classpath:a
 
 ## 스프링MVC프레임워크 설계 구조
 ![image](https://user-images.githubusercontent.com/77110648/179234063-85ba55a0-26e9-46c0-b82b-d426fcecf6cd.png)
+
+
+## 리다이렉트가 많을 경우 HandlerInterceptor를 사용할 수 있다
+-  HandlerInterceptor 에는 컨트롤러 사용 이전에 preHandle(), 컨트롤러 사용 후인 postHandle()
+컨트롤러와 뷰가 모두 작업한 후인 afterCompletion()이 있다. (preHandle이 가장 많이 쓰인다)
