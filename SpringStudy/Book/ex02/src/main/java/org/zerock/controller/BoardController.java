@@ -36,33 +36,57 @@ public class BoardController {
 		return "redirect:/board/list";
 	}
 
-	@GetMapping("/get")
+	@GetMapping("/register")
+	public String register() {
+
+		return "/board/register";
+	}
+
+//	@GetMapping("/get")
+//	public String get(@RequestParam("bno") Long bno, Model model) {
+//
+//		log.info("/get");
+//		model.addAttribute("board", service.get(bno));
+//
+//		return "board/get";
+//	}
+	@GetMapping({"/get", "/modify"})
 	public void get(@RequestParam("bno") Long bno, Model model) {
 
-		log.info("/get");
+		log.info("/get or modify");
 		model.addAttribute("board", service.get(bno));
+
 	}
-	
+
+//	@GetMapping("/modify")
+//	public String modify(@RequestParam("bno") Long bno, Model model) {
+//
+//		log.info("/modify");
+//		model.addAttribute("board", service.get(bno));
+//
+//		return "board/modify";
+//	}
+
 	@PostMapping("/modify")
 	public String modify(BoardVO vo, RedirectAttributes rttr) {
-		
-		log.info("/modify" + vo);
+
+		log.info("/modify_post" + vo);
 		if (service.modify(vo)) {
 			rttr.addFlashAttribute("result", "success");
 		}
-		
+
 		return "redirect:/board/list";
 	}
-	
+
 	@PostMapping("/remove")
 	public String reomve(@RequestParam("bno") Long bno, RedirectAttributes rttr) {
-		
+
 		log.info("/remove");
-		
+
 		if (service.remove(bno)) {
 			rttr.addFlashAttribute("result", "success");
 		}
-		
+
 		return "redirect:/board/list";
 	}
 }

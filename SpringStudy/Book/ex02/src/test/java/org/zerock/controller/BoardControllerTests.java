@@ -74,7 +74,7 @@ public class BoardControllerTests {
 		
 		String resultPage = mockMvc
 				.perform(MockMvcRequestBuilders.post("/board/modify")
-				.param("bno", "81")
+				.param("bno", "41")
 				.param("title", "수정된 새글")
 				.param("content", "수정된 내용")
 				.param("writer", "user_new"))
