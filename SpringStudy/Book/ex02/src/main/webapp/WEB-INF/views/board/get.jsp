@@ -46,11 +46,30 @@
 		<!-- /.panel -->
 	</div>
 	<!-- /.col-lg-12 -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var openForm = $("#openForm");
+			$("button[data-oper='modify']").on("click", function(e) {
+				operForm.attr("action", "/board/modify").submit();
+			});
+			
+			$("button[data-oper='list']").on("click", function(e) {
+				operForm.find("#bno").remove();
+				operForm.attr("action", "/board/list");
+				operForm.submit();
+			});
+		});
+	</script>
 </div>
 <button data-oper='modify' class="btn btn-default"
 	onclick="location.href='/board/modify?bno=<c:out value="${board.bno }"/>'">
 	Modify</button>
 <button data-oper='list' class="btn btn-default"
 	onclick="location.href='/board/list'">List</button>
+
+<form id="openForm" action="/board/modify" method="get">
+					<input type='hidden' id='bno' name='bno' value='<c:out value="${board.bno}"/>' >
+				</form>
+
 
 <%@include file="../includes/footer.jsp"%>

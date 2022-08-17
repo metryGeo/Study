@@ -70,15 +70,15 @@
 		$('button').on("click", function(e) {
 			e.preventDefault();
 			var operation = $(this).data("oper");
-
+		
 			console.log(operation);
-
-			if (operation === 'remove') {
+		
+			if(operation === 'remove') {
 				formObj.attr("action", "/board/remove");
-			} else if (operation === 'list') {
+			} else if(operation==='list') {
 				//move to list
-				self.location = "/board/list";
-				return;
+				formObj.attr("action", "/board/list").attr("method".get");
+				formObj.empth();
 			}
 			formObj.submit();
 		});
